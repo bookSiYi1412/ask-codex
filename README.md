@@ -4,6 +4,8 @@ Ask Codex is an unofficial Claude Code skill that helps Claude Code delegate rep
 
 This project is not affiliated with or endorsed by Anthropic or OpenAI.
 
+Chinese documentation: [README.zh-CN.md](README.zh-CN.md)
+
 ## What It Does
 
 - Routes implementation, exploration, verification, and review-heavy work from Claude Code to Codex.
@@ -43,6 +45,40 @@ Restart Claude Code if needed so the skill metadata is reloaded.
 The skill is named `ask-codex`.
 
 Claude Code should trigger it when a task involves implementation work, repository exploration, data or log inspection, broad codebase search, impact analysis, verification-heavy shell work, or explicit requests to use Codex.
+
+## Claude Code Usage Examples
+
+Use the skill explicitly when you want Claude Code to delegate work to Codex.
+
+Simple implementation task:
+
+```text
+/ask-codex Implement pagination for the user list. Keep the existing filters and add tests.
+```
+
+Read-only repository exploration:
+
+```text
+/ask-codex Find where tenant IDs are derived and propagated. Do not modify files. Summarize findings with file paths and command evidence.
+```
+
+Parallel implementation tasks:
+
+```text
+/ask-codex Run two independent Codex tasks in parallel:
+1. Write docs/code_architecture.md explaining the module structure, data flow, and evaluation design.
+2. Write docs/quickstart_guide.md with step-by-step setup and experiment-running instructions.
+
+Review both outputs after Codex finishes and report quality issues before finalizing.
+```
+
+Long-running guided work:
+
+```text
+/ask-codex Use a brokered Codex session to implement the migration. Monitor progress, send follow-up instructions if needed, then review the final diff.
+```
+
+Tip: when a Codex task is running in the foreground inside Claude Code, press `Ctrl+B` to move it to the background so you can keep working while it runs.
 
 ## Direct Script Usage
 
