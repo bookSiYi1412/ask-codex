@@ -54,7 +54,7 @@ Claude Code                          Codex
 **Example invocation:**
 
 ```bash
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh \
+~/.claude/skills/ask-codex/scripts/ask_codex.sh \
   "Add pagination to the UserList component. Requirements: 20 items per page, support prev/next navigation, preserve existing filter state." \
   --file src/components/UserList.tsx \
   --file src/hooks/useUsers.ts
@@ -172,7 +172,7 @@ Natural extension of Modes A/C. After reading Codex's output, Claude Code perfor
 **Direction 2 — Claude Code implements → Codex reviews:**
 
 ```bash
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh --read-only \
+~/.claude/skills/ask-codex/scripts/ask_codex.sh --read-only \
   "Review the following code changes. Focus on logical correctness and edge case handling.
 
 Changed files:

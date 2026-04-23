@@ -44,13 +44,13 @@ ask_codex.sh returns exit 4
 
 ```bash
 # Initial call
-output=$(~/.claude/skills/codex-delegator/scripts/ask_codex.sh "Add pagination to UserList" --file src/UserList.tsx)
+output=$(~/.claude/skills/ask-codex/scripts/ask_codex.sh "Add pagination to UserList" --file src/UserList.tsx)
 # exit code 4 — Codex asks: "Should pagination be client-side or server-side?"
 
 sid=$(echo "$output" | grep "^session_id=" | cut -d= -f2)
 
 # Claude Code answers and continues
-output=$(~/.claude/skills/codex-delegator/scripts/ask_codex.sh --session "$sid" \
+output=$(~/.claude/skills/ask-codex/scripts/ask_codex.sh --session "$sid" \
   "Server-side pagination. The API already supports ?page=N&limit=20 parameters.")
 # exit code 0 — done
 ```

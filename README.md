@@ -32,15 +32,15 @@ Clone this repository into your Claude Code skills directory:
 
 ```bash
 mkdir -p ~/.claude/skills
-git clone https://github.com/<your-name>/ask-codex ~/.claude/skills/codex-delegator
-chmod +x ~/.claude/skills/codex-delegator/scripts/*.sh
+git clone https://github.com/<your-name>/ask-codex ~/.claude/skills/ask-codex
+chmod +x ~/.claude/skills/ask-codex/scripts/*.sh
 ```
 
 Restart Claude Code if needed so the skill metadata is reloaded.
 
 ## Skill Name
 
-The skill is named `codex-delegator`.
+The skill is named `ask-codex`.
 
 Claude Code should trigger it when a task involves implementation work, repository exploration, data or log inspection, broad codebase search, impact analysis, verification-heavy shell work, or explicit requests to use Codex.
 
@@ -49,7 +49,7 @@ Claude Code should trigger it when a task involves implementation work, reposito
 One-shot delegation:
 
 ```bash
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh \
+~/.claude/skills/ask-codex/scripts/ask_codex.sh \
   "Add error handling to api.ts" \
   --file src/api.ts
 ```
@@ -57,7 +57,7 @@ One-shot delegation:
 Read-only exploration:
 
 ```bash
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh \
+~/.claude/skills/ask-codex/scripts/ask_codex.sh \
   --read-only \
   "Find all call sites for the tenant ID derivation logic"
 ```
@@ -65,7 +65,7 @@ Read-only exploration:
 Brokered session:
 
 ```bash
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh start \
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh start \
   "Implement the requested change" \
   --file src/main.ts
 ```
@@ -73,13 +73,13 @@ bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh start \
 Check broker status:
 
 ```bash
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh status <broker_id>
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh status <broker_id>
 ```
 
 Send follow-up instructions:
 
 ```bash
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh send <broker_id> \
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh send <broker_id> \
   "Also add validation for the new input."
 ```
 

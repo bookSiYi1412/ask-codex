@@ -5,7 +5,7 @@ Detailed command-line reference for the scripts and Codex built-ins this skill c
 ## ask_codex.sh — general invocation
 
 ```bash
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh "Goal description" \
+~/.claude/skills/ask-codex/scripts/ask_codex.sh "Goal description" \
   --file <entry-file-1> \
   --file <entry-file-2>
 ```
@@ -14,25 +14,25 @@ Detailed command-line reference for the scripts and Codex built-ins this skill c
 
 ```bash
 # Scout
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh --read-only \
+~/.claude/skills/ask-codex/scripts/ask_codex.sh --read-only \
   "Map where tenant IDs are derived and propagated. Summarize findings with file paths and command evidence." \
   --file src \
   --file app
 
 # Writer (default)
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh "Implement feature..." --file src/main.ts
+~/.claude/skills/ask-codex/scripts/ask_codex.sh "Implement feature..." --file src/main.ts
 
 # Reviewer
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh --read-only "Review changes..." --file src/main.ts
+~/.claude/skills/ask-codex/scripts/ask_codex.sh --read-only "Review changes..." --file src/main.ts
 
 # Debugger
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh --reasoning high "Fix bug..." --file src/buggy.ts
+~/.claude/skills/ask-codex/scripts/ask_codex.sh --reasoning high "Fix bug..." --file src/buggy.ts
 
 # Session reuse
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh --session <sid> "Continue previous work..."
+~/.claude/skills/ask-codex/scripts/ask_codex.sh --session <sid> "Continue previous work..."
 
 # Custom timeout
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh --timeout 900 --idle-timeout 240 "Complex refactoring task..."
+~/.claude/skills/ask-codex/scripts/ask_codex.sh --timeout 900 --idle-timeout 240 "Complex refactoring task..."
 ```
 
 ### Full Options
@@ -64,24 +64,24 @@ Read `output_path` for Codex's response. Save `session_id` for follow-up `--sess
 
 ```bash
 # Start a brokered session
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh start "Goal description" \
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh start "Goal description" \
   --file <entry-file-1> \
   --file <entry-file-2>
 
 # Inspect current state
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh status <broker_id>
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh status <broker_id>
 
 # Queue a follow-up
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh send <broker_id> "Also add validation."
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh send <broker_id> "Also add validation."
 
 # Interrupt and redirect
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh send <broker_id> "Change direction..." --interrupt
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh send <broker_id> "Change direction..." --interrupt
 
 # Wait for queue drain
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh wait <broker_id> --timeout 600
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh wait <broker_id> --timeout 600
 
 # Stop the broker
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh stop <broker_id>
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh stop <broker_id>
 ```
 
 See `references/collaboration-modes.md` for the brokered collaboration mode (Mode F) details.

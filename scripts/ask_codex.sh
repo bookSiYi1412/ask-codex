@@ -45,7 +45,7 @@ Output (on success, and on timeout/fatal when recoverable metadata exists):
   output_path=<file>           Path to response markdown
 
 For persistent, brokered collaboration:
-  bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh start ...
+  bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh start ...
 
 Examples:
   # New task (positional)

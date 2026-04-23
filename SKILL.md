@@ -1,5 +1,5 @@
 ---
-name: codex-delegator
+name: ask-codex
 description: >-
   TRIGGER when: user requests implementation work, repo exploration, data/log inspection, broad
   codebase search, impact analysis, verification-heavy shell work, or explicitly mentions Codex
@@ -29,8 +29,8 @@ Claude Code is the architect and coordinator; Codex is the autonomous implemente
 
 ## Critical Rules
 
-- Use `~/.claude/skills/codex-delegator/scripts/ask_codex.sh` for single-turn execution.
-- Use `~/.claude/skills/codex-delegator/scripts/codex_broker.sh` for live collaboration, long tasks, review loops, or any task where Claude Code may want to inspect progress and send follow-up instructions before the whole effort is over.
+- Use `~/.claude/skills/ask-codex/scripts/ask_codex.sh` for single-turn execution.
+- Use `~/.claude/skills/ask-codex/scripts/codex_broker.sh` for live collaboration, long tasks, review loops, or any task where Claude Code may want to inspect progress and send follow-up instructions before the whole effort is over.
 - Do not call the `codex` CLI directly from the skill workflow (except `codex exec review` — see `references/invocation.md`).
 - For one-shot `ask_codex.sh` runs: if it succeeds (exit code 0), read the output file. Don't re-run just because output seems short — Codex often works quietly.
 - Quote file paths containing `[`, `]`, spaces, or special characters.
@@ -168,7 +168,7 @@ This is the minimum you need to call Codex. Full option reference, `codex exec r
 ### Single-turn call
 
 ```bash
-~/.claude/skills/codex-delegator/scripts/ask_codex.sh "Goal description" \
+~/.claude/skills/ask-codex/scripts/ask_codex.sh "Goal description" \
   --file <entry-file-1> \
   --file <entry-file-2>
 ```
@@ -192,7 +192,7 @@ Read `output_path` for Codex's response. Save `session_id` for follow-ups via `-
 ### Brokered call
 
 ```bash
-bash ~/.claude/skills/codex-delegator/scripts/codex_broker.sh start "Goal description" \
+bash ~/.claude/skills/ask-codex/scripts/codex_broker.sh start "Goal description" \
   --file <entry-file>
 # then: status / send / wait / stop against the returned broker_id
 ```
