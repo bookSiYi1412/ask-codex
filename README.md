@@ -4,7 +4,7 @@ Ask Codex is an unofficial Claude Code skill that helps Claude Code delegate rep
 
 This project is not affiliated with or endorsed by Anthropic or OpenAI.
 
-Chinese documentation: [README.zh-CN.md](README.zh-CN.md)
+**中文文档**: [README.zh-CN.md](README.zh-CN.md)
 
 ## What It Does
 
