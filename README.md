@@ -4,6 +4,12 @@ Ask Codex is an unofficial Claude Code skill that helps Claude Code delegate rep
 
 This project is not affiliated with or endorsed by Anthropic or OpenAI.
 
+## Origins and Attribution
+
+This project is based on and substantially extends [`oil-oil/codex`](https://github.com/oil-oil/codex), a Claude Code skill for delegating coding tasks to Codex CLI.
+
+Major additions in this repository include expanded routing guidance, brokered session support, additional failure handling, open-source project documentation, and release-oriented maintenance files. See [NOTICE](NOTICE) for attribution details.
+
 ## What It Does
 
 - Routes implementation, exploration, verification, and review-heavy work from Claude Code to Codex.

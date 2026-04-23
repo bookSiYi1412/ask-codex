@@ -1,0 +1,11 @@
+Ask Codex
+Copyright 2026 bookSiYi1412
+
+This project is based on and substantially extends oil-oil/codex:
+
+  https://github.com/oil-oil/codex
+
+The upstream project is described as a Claude Code skill for delegating coding
+tasks to Codex CLI. This repository adds expanded routing guidance, brokered
+session support, additional failure handling, open-source project documentation,
+and release-oriented maintenance files.
