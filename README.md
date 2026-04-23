@@ -4,12 +4,6 @@ Ask Codex is an unofficial Claude Code skill that helps Claude Code delegate rep
 
 This project is not affiliated with or endorsed by Anthropic or OpenAI.
 
-## Origins and Attribution
-
-This project is based on and substantially extends [`oil-oil/codex`](https://github.com/oil-oil/codex), a Claude Code skill for delegating coding tasks to Codex CLI.
-
-Major additions in this repository include expanded routing guidance, brokered session support, additional failure handling, open-source project documentation, and release-oriented maintenance files. See [NOTICE](NOTICE) for attribution details.
-
 ## What It Does
 
 - Routes implementation, exploration, verification, and review-heavy work from Claude Code to Codex.
@@ -28,11 +22,17 @@ Major additions in this repository include expanded routing guidance, brokered s
 
 ## Installation
 
-Clone this repository into your Claude Code skills directory:
+Recommended installation with the `skills` CLI:
+
+```bash
+npx skills add bookSiYi1412/ask-codex -g -a claude-code
+```
+
+Manual installation:
 
 ```bash
 mkdir -p ~/.claude/skills
-git clone https://github.com/<your-name>/ask-codex ~/.claude/skills/ask-codex
+git clone https://github.com/bookSiYi1412/ask-codex ~/.claude/skills/ask-codex
 chmod +x ~/.claude/skills/ask-codex/scripts/*.sh
 ```
 
@@ -101,6 +101,12 @@ scripts/check.sh
 ```
 
 The check script runs Bash syntax checks and uses `shellcheck` when it is installed.
+
+## Origins and Attribution
+
+This project is based on and substantially extends [`oil-oil/codex`](https://github.com/oil-oil/codex), a Claude Code skill for delegating coding tasks to Codex CLI.
+
+Major additions in this repository include expanded routing guidance, brokered session support, additional failure handling, open-source project documentation, and release-oriented maintenance files. See [NOTICE](NOTICE) for attribution details.
 
 ## License
 
